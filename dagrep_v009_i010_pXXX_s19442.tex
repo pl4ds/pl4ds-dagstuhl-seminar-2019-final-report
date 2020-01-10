@@ -43,8 +43,48 @@
 \maketitle
 
 \begin{abstract}
-This report documents the program and the outcomes of Dagstuhl Seminar 19442 "Programming Languages for Distributed Systems and Distributed Data Management". For a real abstract, one should write a little bit more here.
+Programming language advances have played an 
+important role in various areas of distributed systems research, including 
+consistency, communication, and fault tolerance, enabling automated reasoning
+and performance optimization.
+% for distributed systems have been flourishing in the past, 
+% providing ideas for the development of complex systems that 
+% have been deeply influential.
+However, over the last few years, researchers focusing on this area 
+have been scattered across different communities such as
+language design and implementation, (distributed) databases,
+Big Data processing and IoT/edge computing -- resulting in limited interaction.
+The goal of this Seminar is to build a community of researchers interested in 
+programming language techniques for distributed systems and distributed data management, 
+share current research results and set up a common research agenda. 
+This report documents the program and the outcomes of Dagstuhl Seminar 19442 "Programming Languages for Distributed Systems and Distributed Data Management".
 \end{abstract}
+
+\section{Summary}
+
+Developing distributed systems is a well-known, decades-old problem in computer science. Despite significant research effort dedicated to this area, programming distributed systems remains challenging. The issues of consistency, concurrency, fault tolerance, as well as (asynchronous) remote communication among heterogeneous platforms naturally show up in this class of systems, creating a demand for proper language abstractions that enable developers to tackle such challenges.
+
+Over the last years, language abstractions have been a key for achieving the properties above in many industrially successful distributed systems. For example, MapReduce takes advantage of purity to parallelize task processing, complex event processing adopts declarative programming to express sophisticated event correlations, and Spark leverages functional programming for efficient fault recovery via lineage. In parallel, there have been notable advances in research on programming languages for distributed systems, such as conflict-free replicated data types, distributed information flow security, language support for safe distribution of computations, as well as programming frameworks for mixed IoT/cloud development.
+
+However, the researchers that have been carrying out these efforts are scattered across different communities that include programming language design, type systems and theory, database systems and database theory, distributed systems, systems programming, data-centric programming, and web application development. This Dagstuhl Seminar aims to bring researchers from these different communities together.
+
+The seminar aims to focus on answering the following major questions in addition to those raised by participants:
+
+\begin{itemize}
+
+\item Which abstractions are required in emergent fields of distributed systems, such as mixed cloud/edge computing and IoT?
+
+\item How can language abstractions be designed in a way that they provide a high-level interface to programmers and still allow fine-grained tuning of low-level properties when needed, possibly in a gradual way?
+
+\item Which compilation pipeline (e.g., which intermediate representation) is needed to address the (e.g., optimization) issues of distributed systems?
+
+\item Which research issues must be solved to provide tools (e.g., debuggers, profilers) that are needed to support languages that target distributed systems?
+
+\item Which security and privacy issues come up in the context of programming languages for distributed systems and how can they be addressed?
+
+\item What benchmarks can be defined to compare language implementations for distributed systems?
+
+\end{itemize}
 
 \tableofcontents
 
