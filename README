@@ -1,0 +1,42 @@
+      The dagrep class: Preparing reports
+      for the "Dagstuhl Reports" journal.
+
+
+File:       README
+Author:     le-tex publishing services
+
+
+DESCRIPTION
+===========
+
+The \texttt{dagrep} class assists in preparing manuscripts
+for Dagstuhl Reports with {\LaTeX}. It provides some special
+commands to structure the reports and generates the layout
+for the "Dagstuhl Reports" journal.
+
+Copyright:  (C) 2011 Schloss Dagstuhl
+
+
+FILES IN DISTRIBUTION
+=====================
+
+      README              This file
+
+      dagrep.ins          Class installation file
+      dagrep.dtx          Class source file
+      dagrep-sample.tex   LaTeX template
+      dagrep.pdf          User manual for the dagrep class;
+                          it is produced as described below
+      
+      cc.*, nc-eu.*, nd.*,
+      by-nc-nd.*          Creative Commons logos
+      dagrep-logo-bw.*    The Dagstuhl Reports logo
+
+
+BASIC INSTALLATION
+====================
+
+   To get the package for report authors execute:
+     latex dagrep.ins
+     pdflatex dagrep.dtx (twice)
+     zip dagrep.zip dagrep-sample.tex dagrep.cls dagrep.pdf cc.* nc-eu.* nd.* by-nc-nd.* dagrep-logo-bw.*
