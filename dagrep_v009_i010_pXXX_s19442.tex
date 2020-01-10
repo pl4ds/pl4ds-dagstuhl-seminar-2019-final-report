@@ -90,7 +90,194 @@ The seminar aims to focus on answering the following major questions in addition
 
 % Overview of Talks %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\section{Overview of Talks}
+\section{Overview of Talks}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Aggregation $\neq$ Replication}
+\abstractauthor[Carlos Baquero]{Carlos Baquero (Universidade do Minho -- Braga, PT, cbm@di.uminho.pt)}
+
+\license
+
+To be completed...
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Stateful serverless programming}
+\abstractauthor[Sebastian Burckhardt]{Sebastian Burckhardt (Microsoft Research Lab -- Redmond, US, sburckha@microsoft.com)}
+
+\license
+
+Serverless programming models, such as AWS Lambdas or Azure Functions, simplify the development of elastic cloud services by automating low-level aspects of deployment, VM management, and monitoring. However, building a stateful application from stateless functions still poses some challenges for developers, such as handling partial execution failures, or enforcing proper synchronization of conflicting operations. In Azure Durable Functions we offer several features to aid developers in that regard: orchestrations provide reliable workflows, entities provide reliable application objects, and critical sections provide reliable multi-object synchronization. The resulting programming model combines aspects of both the actor model and shared memory, but can execute reliably in a distributed serverless context, and is guaranteed to not deadlock.
+
+%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Programming For Autonomy}
+\abstractauthor[Amit Chopra]{Amit Chopra (Lancaster University -- Lancaster, UK, amit.chopra@lancaster.ac.uk)}
+
+\license
+
+How do we program systems that involve multiple autonomous principals?
+
+To address the question, we must understand what autonomy means. Autonomy means decentralization: principals in a system exercise independent decision making and engage via arms-length communications.  However, not all engagements can be correct (if they were, we would have no system).  This motivates the notion of norms as the basis for determining the correctness of their engagements.  Norms act as a counterbalance to autonomy: do what you please but not everything goes.  
+
+Norms must be operationalized in a decentralized setting via information protocols.  An information protocol specifies the ordering and occurrence of events in a decentralized setting by specifying causality and integrity constraints.  An information protocol can be correctly enacted by endpoints over an asynchronous, unordered communication infrastructure based only upon local knowledge.  This is a significant departure from existing work in computing, which typically does not specify causality and instead relies on stronger infrastructure assumptions (e.g., pairwise FIFO or causal delivery).
+
+In a nutshell, any specification of a system of autonomous principals must be based upon norms and information protocols.  A rigorous study of these ideas and programming based upon them will enable exciting novel kinds of systems, e.g., based upon agreements and contracts -- what most business on our planet is based upon.
+
+%%%%%%%%%%%%%%%%
+\abstracttitle{To be completed...}
+\abstractauthor[Annette Bieniusa]{Annette Bieniusa (TU Kaiserslautern -- Kaiserslautern, DE, bieniusa@cs.uni-kl.de)}
+
+\license
+
+To be completed...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Automating the Deployment of Complex Distributed Systems}
+\abstractauthor[Uwe Breitenbücher]{Uwe Breitenbücher (University of Stuttgart -- Stuttgart, DE, uwe.breitenbuecher@iaas.uni-stuttgart.de)}
+
+\license
+
+The automation of application deployment is critical because deploying systems manually is too error-prone, time-consuming, and costly. Therefore, several deployment automation technologies have been developed in recent years. However, to deploy complex distributed systems, it is often necessary to combine several of these deployment technologies as their capabilities differ considerably. Unfortunately, such an integration is a complex technical issue as each technology has its own deployment metamodel and API. Our first step to tackle this issue was the introduction of the Essential Deployment Metamodel (EDMM), which is a normalized metamodel for deployment models that can be mapped to the 13 most important deployment technologies including, e. g., Terraform, CloudFormation, and TOSCA. However, the current EDMM Transformation Framework only supports transforming an EDMM model into one certain deployment technology, which restricts its applicability, as typically multiple deployment technologies need to be combined for deploying complex systems. Therefore, we are working on an extension that is capable of automatically splitting and transforming one EDMM model to several  deployment models supported by different deployment technologies. Moreover, the extension also generates an imperative workflow model that invokes the different deployment technologies involved with the corresponding deployment models. This enables to fully automate the deployment of complex distributed systems.
+
+%%%%%%%%%%%%%%%%
+\abstracttitle{To be completed...}
+\abstractauthor[Natalia Chechina]{Natalia Chechina (Bournemouth University -- Poole, UK, nchechina@bournemouth.ac.uk)}
+
+\license
+
+To be completed...
+
+%%%%%%%%%%%%%%%%
+\abstracttitle{To be completed...}
+\abstractauthor[Surajit Chaudhuri]{Surajit Chaudhuri (Microsoft Research Lab -- Redmond, US, surajitc@microsoft.com)}
+
+\license
+
+To be completed...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Programming Elastic Services with AEON and PLASMA}
+\abstractauthor[Patrick Eugster]{Patrick Eugster (University of Lugano -- Lugano, CH, patrick.thomas.eugster@usi.ch)}
+
+\license
+
+Implementing distributed services that automatically scale in and out in response to workload changes in order to run efficiently in third-party cloud datacenters is a hard task for programmers. In this talk we present two contributions towards simplifying the development of such elastic services. The first contribution is a variant of the actor programming model which provides strong consistency (i.e., serializability) without hampering the actor model’s strong potential for scalability -- a prerequisite for elasticity. That is, programmers can perform calls across multiple actors in so-called “events” without interference with other events. Our model leverages a DAG-based arrangement of actors with a novel corresponding synchronization protocol  in order to efficiently execute such events, showing substantial speedups over traditional 2-phase locking while similarly avoiding races and deadlocks. The second, independent, contribution consists in augmenting the actor programming model with a second “layer” of programming to support fine-grained elasticity. That is, this layer allows programmers to specify high-level program conditions hinting to scalability bottlenecks (e.g., CPU usage beyond a certain threshold, too high rate of messages between certain actors), and corresponding mitigation actions (e.g., migrate certain actors to hosts with available CPU cycles, co-locate actors with other actors they interact with). As we show, policies expressed in this way consisting in only a few lines allow applications to substantially reduce resource usage and/or improve performance by better distributing load.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Verification of Message-Passing Programs}
+\abstractauthor[Damien Zufferey]{Damien Zufferey (Max Planck Institute  -- Kaiserslautern, DE, zufferey@mpi-sws.org)}
+
+\license
+
+In this talk, I will show how we can harness the synergy between programming languages and verification methods to help programmers build
+reliable software. Often there is a mismatch between what the programming model allows and its applications. Better programming models can (1) remove unneeded expressive power and (2) make it easy, for a verifier, to decompose the program into smaller parts which can be verified separately. I will first look at fault-tolerant distributed algorithms where we integrate a scoping mechanism for communication as part of the program syntax.  The key insight is the use of communication-closure (logical boundaries in a program that messages should not cross) to structure the code. This structure element greatly simplify the programming and verification of fault-tolerant distributed algorithms. Then I will explain how we can use session types to reason about cyber-physical systems in combination with assume-guarantee reasoning. Assume-guarantee reasoning is designed to compose the behaviors of multiple components (bottom-up composition). On the other hand, session types are carefully designed to make a global specification projectable on the individual components in the systems (top-down decomposition).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Selected Challenges in Concurrent and Distributed Programming}
+\abstractauthor[Philipp Haller]{Philipp Haller (KTH Royal Institute of Technology -- Stockholm, SE, phaller@kth.se)}
+
+\license
+
+We present three challenges in concurrent and distributed programming, as well as recent results addressing them. The first challenge consists of ensuring fault-tolerance properties in typed programming languages. The main question is how to enforce fault-tolerance properties for well-typed programs, as opposed to specific algorithms or systems. Towards addressing this question, we present the first correctness results for a typed calculus with first-class lineages. The second challenge consists of using data with different consistency properties safely within the same distributed application. To address this challenge, we propose a novel type system which provides a noninterference guarantee: mutations of potentially-inconsistent data cannot be observed via access to consistent data types. As a third challenge we propose the design of a concurrent domain-specific language for parallelizing static analysis problems.
+
+%%%%%%%%%%%%%%%%
+\abstracttitle{To be completed...}
+\abstractauthor[Manuel Serrano]{Manuel Serrano (INRIA Sophia Antipolis -- Sophia Antipolis, FR, Manuel.Serrano@inria.fr)}
+
+\license
+
+To be completed...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Distributed Systems - The next level}
+\abstractauthor[Schahram Dustdar]{Schahram Dustdar (TU Vienna -- Vienna, AT, dustdar@dsg.tuwien.ac.at)}
+
+\license
+
+As humans, things, software and AI continue to become the entangled fabric of distributed systems, systems engineers and researchers are facing novel challenges. In this talk, we analyze the role of Edge, Cloud, and Human-based Computing as well as AI in the co-evolution of distributed systems for the new decade. We identify challenges and discuss a roadmap that these new distributed systems have to address. We take a closer look at how a cyber-physical fabric will be complemented by AI operationalization to enable seamless end-to-end distributed systems.
+
+%%%%%%%%%%%%%%%%
+\abstracttitle{To be completed...}
+\abstractauthor[Heather Miller]{Heather Miller (Carnegie Mellon University -- Pittsburgh, US, heather.miller@cs.cmu.edu)}
+
+\license
+
+To be completed...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Actors Revisited for Predictable Systems}
+\abstractauthor[Edward A. Lee]{Edward A. Lee (University of California -- Berkeley, US, eal@berkeley.edu)}
+
+\license
+
+Concurrent and distributed software based on publish-and-subscribe and actors are sometimes used to realize distributed cyber-physical systems. Broadly, these mechanisms compose software components that have private state and communicate with each other via message passing. However, the underlying message-passing mechanisms are less deterministic than they could be. In this talk, I described some simple challenge problems that are common in distributed cyber-physical systems and extremely difficult to solve using either actors or publish-and-subscribe. I  offered an alternative model of computation that we call "reactors" that solves these problems simply and elegantly and that is able to leverage decades of results from the real-time systems community. The reactors model is being implemented in a coordination language called Lingua Franca. A key feature is that extends messages with logical timestamps that provide a semantic ordering and a semantic notion of simultaneity. By leveraging synchronized clocks, an efficient distributed implementation guarantees determinacy when network latencies and clock synchronization error remain below assumed bounds.
+
+%%%%%%%%%%%%%%%%
+\abstracttitle{To be completed...}
+\abstractauthor[Laurent Prosperi]{Laurent Prosperi (Panthéon-Sorbonne University  -- Paris, FR, laurent.prosperi@inria.fr)}
+
+\license
+
+To be completed...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Engineering distributed data-intensive applications}
+\abstractauthor[Guido Salvaneschi]{Guido Salvaneschi (TU Darmstadt  -- Darmstadt, DE, salvaneschi@st.informatik.tu-darmstadt.de)}
+
+\license
+
+Over the last few years, ubiquitous connectivity has led to data being constantly generated at an unprecedented rate. As a result, large amounts of data are constantly being processed in 
+an heterogenous infrastructure which stems from the convergence of edge (IoT, mobile) and cloud computing. This poses fundamental engineering challenges on software design, especially with respect to fault tolerance, data consistency, and privacy.
+
+In this presentation, we discuss recent research results we achieved in this context at various levels. We describe an innovative programming framework that improves and simplifies the design of data intensive applications. We also present the use of our programming framework on real-world case studies, emphasising how to achieve fault tolerance and data consistency. Finally, we propose how to account for privacy in the software engineering process for data intensive distributed applications.
+
+%%%%%%%%%%%%%%%%
+\abstracttitle{To be completed...}
+\abstractauthor[Marc Shapiro]{Marc Shapiro (Panthéon-Sorbonne University  -- Paris, FR, marc.shapiro@acm.org)}
+
+\license
+
+To be completed...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Debugging of Actor Programs using Rebeca Model Checking Tool}
+\abstractauthor[Marjan Sirjani]{Marjan Sirjani (Malardalen University -- Vasteras, SE, marjan.sirjani@mdh.se)}
+
+\license
+
+Rebeca is designed as an imperative actor-based language with the goal of providing an easy to use language for modeling concurrent and distributed systems, with formal verification support.
+Timed Rebeca is an extension of Rebeca in which network and computational delays, periodic events, and required deadlines can be expressed in the model. Model checking and simulation tools are built based on the formal semantics of the language. For deadlock-freedom and schedulability analysis special efficient techniques in state space exploration is proposed by exploiting the isolation of method execution in the model. I will briefly show how these models can be used in safety assurance and performance evaluation of different systems, like Network on Chip architectures, sensor network applications, and network protocols. Then I will show how Rebeca can be used for debugging and model-driven development of distributed event-based asynchronous systems.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Designing Distributed Systems with Piecewise Relative Observable Purity}
+\abstractauthor[Peter Van Roy]{Peter Van Roy (Catholic University of Louvain  -- Louvain-la-Neuve, BE,  pvr@info.ucl.ac.be)}
+
+\license
+
+There exists a useful purely functional subset of distributed programming.  Purely functional distributed computations do not interact with the real world (because all inputs must be known in advance), but they support message asynchrony and reordering, and can be used to build networks of communicating agents.  General distributed programming consists of purely functional distributed programming plus interaction points for real-world interactions.  We are working on a design language, called PROP (Piecewise Relative Observable Purity) to specify distributed systems explicitly as a purely functional core plus interaction points.  We aim to turn this into a practical tool that can leverage the powerful techniques available to functional programming for distributed systems design.
+
+%%%%%%%%%%%%%%%%
+\abstracttitle{To be completed...}
+\abstractauthor[Aleksandar Prokopec]{Aleksandar Prokopec (Oracle Labs  --  Zurich, CH, aleksandar.prokopec@gmail.com)}
+
+\license
+
+To be completed...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Invariant-Preserving Applications for Weakly Consistent Replicated Databases}
+\abstractauthor[Carla Ferreira]{Carla Ferreira (Universidade Nova de Lisboa  --  Lisbon, PT, carla.ferreira@fct.unl.pt)}
+
+\license
+
+Building trustworthy cloud applications is inherently complex and error-prone, and requires developers with a high level of expertise. In this talk, I discuss sound analyze techniques that leverage recent theoretical advances to avoid altogether coordinating the execution of operations. The approach consists of modifying operations in a way that application invariants are ensured to be always maintained. When no conflicting updates occur, the modified operations present their original semantics. Otherwise, it uses sensible and deterministic conflict resolution policies that preserve the invariants of the application.
+
+%%%%%%%%%%%%%%%%
+\abstracttitle{The Global Object Tracker (GoT)}
+\abstractauthor[Rohan Achar]{Rohan Achar (University of California --  Irvine, US)}
+
+\license
+
+Object state synchronization between components of distributed applications containing several collaborating or competing components with highly mutable, long-lived, and replicated state is a challenging research area. As an organizing principle for such replicated objects, we propose the Global Object Tracker (GoT) model, an object-oriented programming model whose design and interfaces mirror those found in decentralized version control systems: a version graph, working data, diffs, commit, checkout, fetch, push, and merge. We have implemented GoT in a framework called Spacetime, written in Python. The advantages offered by GoT is the communication of expressive state updates that have low latency of propagation, and observability and thus, reasoning, over all the state changes that happen in the application.
 
 % Working groups %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
