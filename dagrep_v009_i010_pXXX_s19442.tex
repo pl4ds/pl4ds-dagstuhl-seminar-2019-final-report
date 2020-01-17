@@ -229,12 +229,15 @@ To be completed...
 Concurrent and distributed software based on publish-and-subscribe and actors are sometimes used to realize distributed cyber-physical systems. Broadly, these mechanisms compose software components that have private state and communicate with each other via message passing. However, the underlying message-passing mechanisms are less deterministic than they could be. In this talk, I described some simple challenge problems that are common in distributed cyber-physical systems and extremely difficult to solve using either actors or publish-and-subscribe. I  offered an alternative model of computation that we call "reactors" that solves these problems simply and elegantly and that is able to leverage decades of results from the real-time systems community. The reactors model is being implemented in a coordination language called Lingua Franca. A key feature is that extends messages with logical timestamps that provide a semantic ordering and a semantic notion of simultaneity. By leveraging synchronized clocks, an efficient distributed implementation guarantees determinacy when network latencies and clock synchronization error remain below assumed bounds.
 
 %%%%%%%%%%%%%%%%
-\abstracttitle{To be completed...}
+\abstracttitle{Toward high-level programming for distributed systems}
 \abstractauthor[Laurent Prosperi]{Laurent Prosperi (Panthéon-Sorbonne University  -- Paris, FR, laurent.prosperi@inria.fr)}
 
 \license
 
-To be completed...
+Programming distributed systems is arduous because of failures, asynchrony and trade-offs (e.g. CAP). Moreover, requirements will depend on the audience, for instance ranging from productivity to control.
+Our work aims at mastering the complexity of building distributed systems while keeping fine-grain control and enhancing dependability. Distributed abstractions will help mastering the complexity, a distributed abstraction is composed of specifications and a set of implementations having their own patterns of distribution. Fine-grain control will be achieved by allowing the programmer to create new abstractions (or use a custom implementation of an existing one) and by exposing runtime behaviors (e.g. fault-tolerance) as a first class citizen, by expressing them as distributed abstractions. Dependability will be ensured at the level of distributed abstractions, by providing, and dynamic checking, formal specifications (internal behaviors, ports, concurrent interactions and consistency) of each of them and of their composition.
+We believe that the situation is ripe for a new programming environment composed of i) a specification language and ii) a related programming language with embedded dynamic checking of the specifications. Moreover, we will enable the reusability of existing code base (by implementing our approach as a DSL) and of existing systems by allowing assembling pre existing distributed components (e.g. a datastore) as an implementation of a distributed abstraction.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \abstracttitle{Engineering distributed data-intensive applications}
@@ -248,12 +251,13 @@ an heterogenous infrastructure which stems from the convergence of edge (IoT, mo
 In this presentation, we discuss recent research results we achieved in this context at various levels. We describe an innovative programming framework that improves and simplifies the design of data intensive applications. We also present the use of our programming framework on real-world case studies, emphasising how to achieve fault tolerance and data consistency. Finally, we propose how to account for privacy in the software engineering process for data intensive distributed applications.
 
 %%%%%%%%%%%%%%%%
-\abstracttitle{To be completed...}
+\abstracttitle{The programming continuum, from core to edge and back}
 \abstractauthor[Marc Shapiro]{Marc Shapiro (Panthéon-Sorbonne University  -- Paris, FR, marc.shapiro@acm.org)}
 
 \license
 
-To be completed...
+Current cloud architectures, centralised in a few massive data centres, are increasingly moving towards support of edge resources, including localised data centres, points-of-presence, 5G tower micro-DCs, IoT gateways, and far-edge devices. Computing models offered across this spectrum differ vastly, from database-centric in the core, to stream- and notification based at the far edge. When a database system supports notifications, and vice-versa, these are tacked on as an afterthought and not well integrated. Data-sharing models themselves range from weakly to strongly consistent, with blockchains being a bit of both. Indeed, at this scale, CAP and the conflict between correctness and availability is inescapable. Security is often a second-class citizen in distributed system design, as is deployment, monitoring and run-time control. However, we argue that there is no good reason for this proliferation of incompatible models. Developers need access to the full power of distributed computing; they need a common programming model across the whole spectrum, forming a programming continuum. For instance, data access and notifications can be designed to be mutually consistent. Replication can be available-first (based on CRDTs) but designed to seamlessly support stronger synchronisation when required by application semantics. A large system being a composition of parts, composable verification techniques are a key to success. The designer should be able to create and reason about distributed abstractions. To enforce these abstractions, and for security reasons, requires arms-length isolation boundaries. This may use encryption and to branching/merging consistency models, inspired by distributed version control and blockchains. Deployment and monitoring can be programmed using the same abstractions as ordinary computations. The above can be implemented in many different (but mutually compatible) ways, for instance in the core vs. at the far edge.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \abstracttitle{Debugging of Actor Programs using Rebeca Model Checking Tool}
@@ -285,8 +289,15 @@ To be completed...
 \abstractauthor[Carla Ferreira]{Carla Ferreira (Universidade Nova de Lisboa  --  Lisbon, PT, carla.ferreira@fct.unl.pt)}
 
 \license
+%\jointwork{Balegas, Valter; Duarte, Sérgio; Ferreira, Carla; Rodrigues, Rodrigo;  Preguiça, Nuno}
+%\abstractref[http://dx.doi.org/10.14778/3297753.3297760]
+%{Balegas, Valter; Duarte, Sérgio; Ferreira, Carla; Rodrigues, Rodrigo;  Preguiça, Nuno, 
+%IPA: invariant-preserving applications for weakly consistent replicated databases,
+%Proceedings of the VLDB Endowment 12 (4), 404--418.}
+%\abstractrefurl{http://dx.doi.org/10.14778/3297753.3297760}
 
-Building trustworthy cloud applications is inherently complex and error-prone, and requires developers with a high level of expertise. In this talk, I discuss sound analyze techniques that leverage recent theoretical advances to avoid altogether coordinating the execution of operations. The approach consists of modifying operations in a way that application invariants are ensured to be always maintained. When no conflicting updates occur, the modified operations present their original semantics. Otherwise, it uses sensible and deterministic conflict resolution policies that preserve the invariants of the application.
+Building trustworthy cloud applications is inherently complex and error-prone, and requires developers with a high level of expertise. In this talk, I discuss sound analyses techniques that leverage recent theoretical advances to avoid altogether coordinating the execution of operations. The approach consists of modifying operations in a way that application invariants are ensured to be always maintained. When no conflicting updates occur, the modified operations present their original semantics. Otherwise, it uses sensible and deterministic conflict resolution policies that preserve the invariants of the application.
+
 
 %%%%%%%%%%%%%%%%
 \abstracttitle{The Global Object Tracker (GoT)}
