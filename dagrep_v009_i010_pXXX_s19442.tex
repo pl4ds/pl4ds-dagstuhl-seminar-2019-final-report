@@ -147,12 +147,12 @@ The automation of application deployment is critical because deploying systems m
 To be completed...
 
 %%%%%%%%%%%%%%%%
-\abstracttitle{To be completed...}
+\abstracttitle{Cloud + Big Data: Implications for Structured Data Platforms}
 \abstractauthor[Surajit Chaudhuri]{Surajit Chaudhuri (Microsoft Research Lab -- Redmond, US, surajitc@microsoft.com)}
 
 \license
 
-To be completed...
+The combination of the Cloud and Big Data has led to significant architectural rethinking in the database community because of the need to accommodate requirements of Compute Elasticity and the diversity of the Big Data Platforms that encompass SQL Data Warehousing, Spark, and other emerging platforms that support distributed ML. There is also increased urgency to support Approximate Data Analysis as data volumes continue to grow exponentially. Another long standing pain point further amplified by Big Data is data cleaning and data transformation, an essential pre-processing step for querying as well as advanced analytics to generate valuable insight. Despite much research activities, we don’t yet have a DSL that has both broad applicability and helps lower the complexity of this important step for the programmers.  In this talk, we will review these disruptions and challenges and sketch a few of the promising directions. Specifically, we will discuss the progress we have made in approximate query processing through injection of two new sampling operators in the query language and incorporating them in the Query Optimization step.  However, leveraging such operators require sophistication and so we are still far from democratizing approximate query processing. In the area of data cleaning and transformation, we will examine the promise of Program Synthesis. For many of these problems, there is a unique opportunity for Programming Language researchers and database researchers to work together to address the open challenges.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \abstracttitle{Programming Elastic Services with AEON and PLASMA}
@@ -180,12 +180,25 @@ reliable software. Often there is a mismatch between what the programming model 
 We present three challenges in concurrent and distributed programming, as well as recent results addressing them. The first challenge consists of ensuring fault-tolerance properties in typed programming languages. The main question is how to enforce fault-tolerance properties for well-typed programs, as opposed to specific algorithms or systems. Towards addressing this question, we present the first correctness results for a typed calculus with first-class lineages. The second challenge consists of using data with different consistency properties safely within the same distributed application. To address this challenge, we propose a novel type system which provides a noninterference guarantee: mutations of potentially-inconsistent data cannot be observed via access to consistent data types. As a third challenge we propose the design of a concurrent domain-specific language for parallelizing static analysis problems.
 
 %%%%%%%%%%%%%%%%
-\abstracttitle{To be completed...}
+\abstracttitle{HipHop.js}
 \abstractauthor[Manuel Serrano]{Manuel Serrano (INRIA Sophia Antipolis -- Sophia Antipolis, FR, Manuel.Serrano@inria.fr)}
 
 \license
 
-To be completed...
+HipHop is a synchronous reactive language for the web and IoT.  It
+adds synchronous concurrency and preemption to Hop, which is itself an
+asynchronous multitier extension of JavaScript. Inspired from Esterel,
+HipHop simplifies the programming of non-trivial temporal behaviors as
+found in complex web interfaces or IoT controllers and the cooperation
+between synchronous and asynchronous activities. HipHop is compiled
+into plain sequential JavaScript and executes on unmodified runtime
+environments.  In this presentation we show two examples to present
+and discuss HipHop: a simple web login form to introduce the language
+and show how it differs from JavaScript, and a real life example, an
+interactive music system that show why concurrency and preemption help
+programming such temporal applications. A live demo of the musical
+application will be given.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \abstracttitle{Distributed Systems - The next level}
