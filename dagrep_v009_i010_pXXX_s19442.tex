@@ -70,9 +70,9 @@ Developing distributed systems is a well-known, decades-old problem in computer 
 
 Over the last years, language abstractions have been a key for achieving the properties above in many industrially successful distributed systems. For example, MapReduce takes advantage of purity to parallelize task processing, complex event processing adopts declarative programming to express sophisticated event correlations, and Spark leverages functional programming for efficient fault recovery via lineage. In parallel, there have been notable advances in research on programming languages for distributed systems, such as conflict-free replicated data types, distributed information flow security, language support for safe distribution of computations, as well as programming frameworks for mixed IoT/cloud development.
 
-However, the researchers that have been carrying out these efforts are scattered across different communities that include programming language design, type systems and theory, database systems and database theory, distributed systems, systems programming, data-centric programming, and web application development. This Dagstuhl Seminar aims to bring researchers from these different communities together.
+However, the researchers that have been carrying out these efforts are scattered across different communities that include programming language design, type systems and theory, database systems and database theory, distributed systems, systems programming, data-centric programming, and web application development. This Dagstuhl Seminar brought together researchers from these different communities together.
 
-The seminar aims to focus on answering the following major questions in addition to those raised by participants:
+The seminar focused on answering the following major questions: %in addition to those raised by participants:
 
 \begin{itemize}
 
@@ -87,8 +87,38 @@ The seminar aims to focus on answering the following major questions in addition
 \item Which security and privacy issues come up in the context of programming languages for distributed systems and how can they be addressed?
 
 \item What benchmarks can be defined to compare language implementations for distributed systems?
-
 \end{itemize}
+
+The seminar accomplished the goal of bringing together the research communities of databases, distributed systems, and programming languages. It brought together 24 academic and industrial researchers from Austria, Belgium, France, Germany, Portugal, Sweden, Switzerland, UK, and USA, with complementary expertise and research interests. 
+The group had a balanced number of senior researchers and junior researchers, and a strong industrial representation.
+
+The scientific program comprised 28 sessions: 16 short contributed talks with the maximum duration of 15 minutes; 
+6 long contributed talks with the maximum duration of 35 minutes; 2 plenary sessions; and 4 group sessions. 
+The first two days of the seminar were dedicated to research talks, but it was ensured that each talk had  
+allocated time for discussions and exchange of ideas. In the two following mornings there were 3 plenary sessions and 2 parallel group sessions.
+The topics for these sessions were proposed and selected after a lively discussion between participants, 
+where the most popular sessions were promoted to plenary and the remaining occurred in two parallel sessions.
+The scientific sessions discussed and collected open questions on the topics of: programming models and abstractions; security and privacy; 
+static guarantees, type systems, verification; distributed computing for the edge; time, synchrony, and consistency; and persistency and serialization. There was also a social topic discussing further actions to bring the three communities together. Although, there are overlapping research interests, there is a difference of values between communities that needs to be acknowledged and tackled. 
+Participants agreed that it would be useful to organize follow up events. In particular, 
+it would be important to expand future events to PhD students, for instance by having an integrated Summer School. 
+As a result of the seminar participants from these different communities starting discussing new collaborations and planning future events.
+
+%\begin{itemize}
+%\item Programming models (plenary):  What should be the abstractions exposed to application programmers?
+%What is a better approach, multitier programming or transparently deriving distributed program from a sequential one?
+%How to organizes the layers / stack in distributed systems? 
+%Layers / stack in distributed systems: how to organize the system, composition
+%\item  Security and privacy (plenary): When is security not orthogonal? Common vocabulary?  Privacy and trust, provenance
+%\item Social topic (plenary): DS community, DB community and PL community? How can the two communities benefit from each other? How to bridge different communities? Follow up event?
+%\item Static guarantees, type systems, verification (group): 
+%\item Distributed computing for the edge (group): 
+%\item Time and synchrony (group):  Integrating time into PL. Consistency
+%\item Persistence (group): Most PL are not designed for persistence, typing 
+%Materialization, view updates
+%Data and control, database management 
+%\end{itemize}
+
 
 \tableofcontents
 
@@ -250,12 +280,23 @@ an heterogenous infrastructure which stems from the convergence of edge (IoT, mo
 
 In this presentation, we discuss recent research results we achieved in this context at various levels. We describe an innovative programming framework that improves and simplifies the design of data intensive applications. We also present the use of our programming framework on real-world case studies, emphasising how to achieve fault tolerance and data consistency. Finally, we propose how to account for privacy in the software engineering process for data intensive distributed applications.
 
-%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abstracttitle{Just-Right Consistency}
+\abstractauthor[Marc Shapiro]{Marc Shapiro (Panthéon-Sorbonne University  -- Paris, FR, marc.shapiro@acm.org)}
+
+\license
+
+In a distributed data store, the CAP theorem forces a choice between strong consistency (CP) and availability and responsiveness (AP). To address this issue, we take an application-driven approach, Just-Right Consistency (JRC). JRC derives a consistency model that is sufficient to maintain the application invariants, otherwise remaining as available as possible.
+JRC leverages application invariant-maintaining patterns. Two, ordered updates and atomic grouping, are compatible with concurrent and asynchronous updates, orthogonally to CAP. In contrast, checking a data precondition on partitioned state is CAP-sensitive. However, if two updates do not negate each other's precondition, they may legally execute concurrently. Updates must synchronise only if one negates the precondition of the other.
+The JRC approach is supported by the CRDT data model that ensures that concurrent updates converge; by Antidote, a cloud-scale CRDT data store that guarantees transactional causal consistency; and by the CISE static analyser that verifies whether application invariants are guaranteed.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \abstracttitle{The programming continuum, from core to edge and back}
 \abstractauthor[Marc Shapiro]{Marc Shapiro (Panthéon-Sorbonne University  -- Paris, FR, marc.shapiro@acm.org)}
 
 \license
 
+The programming continuum, from core to edge and back
 Current cloud architectures, centralised in a few massive data centres, are increasingly moving towards support of edge resources, including localised data centres, points-of-presence, 5G tower micro-DCs, IoT gateways, and far-edge devices. Computing models offered across this spectrum differ vastly, from database-centric in the core, to stream- and notification based at the far edge. When a database system supports notifications, and vice-versa, these are tacked on as an afterthought and not well integrated. Data-sharing models themselves range from weakly to strongly consistent, with blockchains being a bit of both. Indeed, at this scale, CAP and the conflict between correctness and availability is inescapable. Security is often a second-class citizen in distributed system design, as is deployment, monitoring and run-time control. However, we argue that there is no good reason for this proliferation of incompatible models. Developers need access to the full power of distributed computing; they need a common programming model across the whole spectrum, forming a programming continuum. For instance, data access and notifications can be designed to be mutually consistent. Replication can be available-first (based on CRDTs) but designed to seamlessly support stronger synchronisation when required by application semantics. A large system being a composition of parts, composable verification techniques are a key to success. The designer should be able to create and reason about distributed abstractions. To enforce these abstractions, and for security reasons, requires arms-length isolation boundaries. This may use encryption and to branching/merging consistency models, inspired by distributed version control and blockchains. Deployment and monitoring can be programmed using the same abstractions as ordinary computations. The above can be implemented in many different (but mutually compatible) ways, for instance in the core vs. at the far edge.
 
 
