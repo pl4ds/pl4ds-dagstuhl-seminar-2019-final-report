@@ -132,7 +132,13 @@ As a result of the seminar participants from these different communities startin
 
 \license
 
-To be completed...
+Both distributed aggregation and replication for high availability are techniques that can help tackle geo-replication, offline operation and edge/fog computing. Distributed aggregation often shares many properties in common with CRDT style convergent replication, but they are not the same concept. 
+The main difference is that in replication there is an abstraction of a single replicated state that can be updated in the multiple locations where a replica is present. This state is not owned by any given replica, but any replica can evolve it by applying operations that transform the shared state. This notion applies both in strong consistency and high availability settings. The difference being that in highly available replication the replicas are allowed to diverge and later reconcile. Another factor is that operations that lead to state changes are often the result of the activity an external user that interacts with the system, e.g. adjusting the target room temperature up by 2 degrees. As such, different users, can do conflicting actions, either concurrently or in sequence (most of us did in their childhood on/off light switching fights with other kids and adults).
+
+Distributed data aggregation refers to several data aggregation techniques that are common in sensor network settings and datacenter infrastructure monitoring. In contrast to replication, each node/location has access to its own local data, e.g. CPU utilisation or a local measurement of humidity levels, and typically this data can evolve continuously. Also, the data to be aggregated is often not directly controlled by users, it usually results from an external physical process or the result of complex system evolutions. Thus, each sensing node usually has exclusive access to a local input value that evolves in time. The aggregation process is then tasked with collecting and transforming this information, e.g. calculating the average or the maximum value, and making it available at a specified location (sink) or disseminating it back to the nodes (by broadcasting the aggregate result). In aggregation the source of truth for each individual measurement is in the actual node that provided it.
+
+Sometimes the two concepts have in common the notion of data merging. In state-based CRDTs operations are reflected in a semi-lattice state that can be combined with others with a join function. In data aggregation there is also often a notion of joining data together, but there is an additional aspect of data reduction and summarisation that is usually not present in CRDT designs. To add to the confusion, it’s is possible to combine the two concepts in a single system, as we did in the design of Scalable Eventually Consistent Counters, that combines a hierarchical CRDT design with a global aggregation and reporting facet.
+However, ignoring corner cases, the difference can be quite clear and recognising it can help in selecting the right tools. A final take-away example is to consider the control of room temperature: The plus/minus control that sets the set point temperature can be captured by a CRDT; The combining of different temperature sensors across the room to obtain the average temperature is distributed aggregation.
 
 %%%%%%%%%%%%%%%%%%%%%%%
 \abstracttitle{Stateful serverless programming}
@@ -157,12 +163,17 @@ Norms must be operationalized in a decentralized setting via information protoco
 In a nutshell, any specification of a system of autonomous principals must be based upon norms and information protocols.  A rigorous study of these ideas and programming based upon them will enable exciting novel kinds of systems, e.g., based upon agreements and contracts -- what most business on our planet is based upon.
 
 %%%%%%%%%%%%%%%%
-\abstracttitle{To be completed...}
+\abstracttitle{Access control for highly-available transactional data stores}
 \abstractauthor[Annette Bieniusa]{Annette Bieniusa (TU Kaiserslautern -- Kaiserslautern, DE, bieniusa@cs.uni-kl.de)}
 
 \license
 
-To be completed...
+Access control systems for data stores regulate which users are allowed to read or update a specific item.
+For long term deployments, it is typically required that these policies can dynamically change as the system and its user base evolves.
+In this talk, we discuss the challenges these adaptable security policies raises in highly available data stores that allow for concurrent modifications and tolerate partial network partitions.
+By formally deriving the consistency guarantees for access control and data modifications, we formulate the requirements on the involved system components and their interplay.
+We further present ACGreGate, a Java framework for implementing correct access control layers for the transactional CRDT store AntidoteDB.
+This is joint work with Mathias Weber and Arnd Poetzsch-Heffter.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \abstracttitle{Automating the Deployment of Complex Distributed Systems}
@@ -330,7 +341,7 @@ To be completed...
 \abstractauthor[Carla Ferreira]{Carla Ferreira (Universidade Nova de Lisboa  --  Lisbon, PT, carla.ferreira@fct.unl.pt)}
 
 \license
-%\jointwork{Balegas, Valter; Duarte, Sérgio; Ferreira, Carla; Rodrigues, Rodrigo;  Preguiça, Nuno}
+%\jointwork{Balegas, Valter; Duarte, Sérgio; Rodrigues, Rodrigo;  Preguiça, Nuno}
 %\abstractref[http://dx.doi.org/10.14778/3297753.3297760]
 %{Balegas, Valter; Duarte, Sérgio; Ferreira, Carla; Rodrigues, Rodrigo;  Preguiça, Nuno, 
 %IPA: invariant-preserving applications for weakly consistent replicated databases,
