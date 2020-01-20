@@ -24,7 +24,7 @@
 \author[4]{Guido Salvaneschi}
 \author[5]{Cristina Videira Lopes}
 \authorrunning{Ferreira, Haller, Markl, Salvaneschi, and Videira Lopes}
-\affil[1]{New University of Lisbon, PT, \texttt{carla.ferreira@fct.unl.pt}}
+\affil[1]{Universidade NOVA de Lisboa, PT, \texttt{carla.ferreira@fct.unl.pt}}
 \affil[2]{KTH Royal Institute of Technology - Stockholm, SE, \texttt{phaller@kth.se}}
 \affil[3]{TU Berlin, DE, \texttt{volker.markl@tu-berlin.de}}
 \affil[4]{TU Darmstadt, DE, \texttt{salvaneschi@st.informatik.tu-darmstadt.de}}
@@ -89,7 +89,7 @@ The seminar focused on answering the following major questions: %in addition to 
 \item What benchmarks can be defined to compare language implementations for distributed systems?
 \end{itemize}
 
-The seminar accomplished the goal of bringing together the research communities of databases, distributed systems, and programming languages. It brought together 24 academic and industrial researchers from Austria, Belgium, France, Germany, Portugal, Sweden, Switzerland, UK, and USA, with complementary expertise and research interests. 
+The seminar accomplished the goal of bringing together the research communities of databases, distributed systems, and programming languages. It included  24 academic and industrial researchers from Austria, Belgium, France, Germany, Portugal, Sweden, Switzerland, UK, and USA, with complementary expertise and research interests. 
 The group had a balanced number of senior researchers and junior researchers, and a strong industrial representation.
 
 The scientific program comprised 28 sessions: 16 short contributed talks with the maximum duration of 15 minutes; 
@@ -149,7 +149,7 @@ However, ignoring corner cases, the difference can be quite clear and recognisin
 Serverless programming models, such as AWS Lambdas or Azure Functions, simplify the development of elastic cloud services by automating low-level aspects of deployment, VM management, and monitoring. However, building a stateful application from stateless functions still poses some challenges for developers, such as handling partial execution failures, or enforcing proper synchronization of conflicting operations. In Azure Durable Functions we offer several features to aid developers in that regard: orchestrations provide reliable workflows, entities provide reliable application objects, and critical sections provide reliable multi-object synchronization. The resulting programming model combines aspects of both the actor model and shared memory, but can execute reliably in a distributed serverless context, and is guaranteed to not deadlock.
 
 %%%%%%%%%%%%%%%%%%%%%
-\abstracttitle{Programming For Autonomy}
+\abstracttitle{Programming for autonomy}
 \abstractauthor[Amit Chopra]{Amit Chopra (Lancaster University -- Lancaster, UK, amit.chopra@lancaster.ac.uk)}
 
 \license
@@ -176,7 +176,7 @@ We further present ACGreGate, a Java framework for implementing correct access c
 This is joint work with Mathias Weber and Arnd Poetzsch-Heffter.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\abstracttitle{Automating the Deployment of Complex Distributed Systems}
+\abstracttitle{Automating the deployment of complex distributed systems}
 \abstractauthor[Uwe Breitenbücher]{Uwe Breitenbücher (University of Stuttgart -- Stuttgart, DE, uwe.breitenbuecher@iaas.uni-stuttgart.de)}
 
 \license
@@ -192,7 +192,7 @@ The automation of application deployment is critical because deploying systems m
 To be completed...
 
 %%%%%%%%%%%%%%%%
-\abstracttitle{Cloud + Big Data: Implications for Structured Data Platforms}
+\abstracttitle{Cloud + Big Data: Implications for structured data platforms}
 \abstractauthor[Surajit Chaudhuri]{Surajit Chaudhuri (Microsoft Research Lab -- Redmond, US, surajitc@microsoft.com)}
 
 \license
@@ -200,7 +200,7 @@ To be completed...
 The combination of the Cloud and Big Data has led to significant architectural rethinking in the database community because of the need to accommodate requirements of Compute Elasticity and the diversity of the Big Data Platforms that encompass SQL Data Warehousing, Spark, and other emerging platforms that support distributed ML. There is also increased urgency to support Approximate Data Analysis as data volumes continue to grow exponentially. Another long standing pain point further amplified by Big Data is data cleaning and data transformation, an essential pre-processing step for querying as well as advanced analytics to generate valuable insight. Despite much research activities, we don’t yet have a DSL that has both broad applicability and helps lower the complexity of this important step for the programmers.  In this talk, we will review these disruptions and challenges and sketch a few of the promising directions. Specifically, we will discuss the progress we have made in approximate query processing through injection of two new sampling operators in the query language and incorporating them in the Query Optimization step.  However, leveraging such operators require sophistication and so we are still far from democratizing approximate query processing. In the area of data cleaning and transformation, we will examine the promise of Program Synthesis. For many of these problems, there is a unique opportunity for Programming Language researchers and database researchers to work together to address the open challenges.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\abstracttitle{Programming Elastic Services with AEON and PLASMA}
+\abstracttitle{Programming elastic services with AEON and PLASMA}
 \abstractauthor[Patrick Eugster]{Patrick Eugster (University of Lugano -- Lugano, CH, patrick.thomas.eugster@usi.ch)}
 
 \license
@@ -208,7 +208,7 @@ The combination of the Cloud and Big Data has led to significant architectural r
 Implementing distributed services that automatically scale in and out in response to workload changes in order to run efficiently in third-party cloud datacenters is a hard task for programmers. In this talk we present two contributions towards simplifying the development of such elastic services. The first contribution is a variant of the actor programming model which provides strong consistency (i.e., serializability) without hampering the actor model’s strong potential for scalability -- a prerequisite for elasticity. That is, programmers can perform calls across multiple actors in so-called “events” without interference with other events. Our model leverages a DAG-based arrangement of actors with a novel corresponding synchronization protocol  in order to efficiently execute such events, showing substantial speedups over traditional 2-phase locking while similarly avoiding races and deadlocks. The second, independent, contribution consists in augmenting the actor programming model with a second “layer” of programming to support fine-grained elasticity. That is, this layer allows programmers to specify high-level program conditions hinting to scalability bottlenecks (e.g., CPU usage beyond a certain threshold, too high rate of messages between certain actors), and corresponding mitigation actions (e.g., migrate certain actors to hosts with available CPU cycles, co-locate actors with other actors they interact with). As we show, policies expressed in this way consisting in only a few lines allow applications to substantially reduce resource usage and/or improve performance by better distributing load.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\abstracttitle{Verification of Message-Passing Programs}
+\abstracttitle{Verification of message-passing programs}
 \abstractauthor[Damien Zufferey]{Damien Zufferey (Max Planck Institute  -- Kaiserslautern, DE, zufferey@mpi-sws.org)}
 
 \license
@@ -217,7 +217,7 @@ In this talk, I will show how we can harness the synergy between programming lan
 reliable software. Often there is a mismatch between what the programming model allows and its applications. Better programming models can (1) remove unneeded expressive power and (2) make it easy, for a verifier, to decompose the program into smaller parts which can be verified separately. I will first look at fault-tolerant distributed algorithms where we integrate a scoping mechanism for communication as part of the program syntax.  The key insight is the use of communication-closure (logical boundaries in a program that messages should not cross) to structure the code. This structure element greatly simplify the programming and verification of fault-tolerant distributed algorithms. Then I will explain how we can use session types to reason about cyber-physical systems in combination with assume-guarantee reasoning. Assume-guarantee reasoning is designed to compose the behaviors of multiple components (bottom-up composition). On the other hand, session types are carefully designed to make a global specification projectable on the individual components in the systems (top-down decomposition).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\abstracttitle{Selected Challenges in Concurrent and Distributed Programming}
+\abstracttitle{Selected challenges in concurrent and distributed programming}
 \abstractauthor[Philipp Haller]{Philipp Haller (KTH Royal Institute of Technology -- Stockholm, SE, phaller@kth.se)}
 
 \license
@@ -246,7 +246,7 @@ application will be given.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\abstracttitle{Distributed Systems - The next level}
+\abstracttitle{Distributed systems - The next level}
 \abstractauthor[Schahram Dustdar]{Schahram Dustdar (TU Vienna -- Vienna, AT, dustdar@dsg.tuwien.ac.at)}
 
 \license
@@ -262,7 +262,7 @@ As humans, things, software and AI continue to become the entangled fabric of di
 To be completed...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\abstracttitle{Actors Revisited for Predictable Systems}
+\abstracttitle{Actors revisited for predictable systems}
 \abstractauthor[Edward A. Lee]{Edward A. Lee (University of California -- Berkeley, US, eal@berkeley.edu)}
 
 \license
@@ -292,27 +292,23 @@ an heterogenous infrastructure which stems from the convergence of edge (IoT, mo
 In this presentation, we discuss recent research results we achieved in this context at various levels. We describe an innovative programming framework that improves and simplifies the design of data intensive applications. We also present the use of our programming framework on real-world case studies, emphasising how to achieve fault tolerance and data consistency. Finally, we propose how to account for privacy in the software engineering process for data intensive distributed applications.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\abstracttitle{Just-Right Consistency}
+\abstracttitle{Just-right consistency \& The programming continuum}
 \abstractauthor[Marc Shapiro]{Marc Shapiro (Panthéon-Sorbonne University  -- Paris, FR, marc.shapiro@acm.org)}
 
 \license
 
+\textbf{Just-right consistency --}
 In a distributed data store, the CAP theorem forces a choice between strong consistency (CP) and availability and responsiveness (AP). To address this issue, we take an application-driven approach, Just-Right Consistency (JRC). JRC derives a consistency model that is sufficient to maintain the application invariants, otherwise remaining as available as possible.
 JRC leverages application invariant-maintaining patterns. Two, ordered updates and atomic grouping, are compatible with concurrent and asynchronous updates, orthogonally to CAP. In contrast, checking a data precondition on partitioned state is CAP-sensitive. However, if two updates do not negate each other's precondition, they may legally execute concurrently. Updates must synchronise only if one negates the precondition of the other.
 The JRC approach is supported by the CRDT data model that ensures that concurrent updates converge; by Antidote, a cloud-scale CRDT data store that guarantees transactional causal consistency; and by the CISE static analyser that verifies whether application invariants are guaranteed.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\abstracttitle{The programming continuum, from core to edge and back}
-\abstractauthor[Marc Shapiro]{Marc Shapiro (Panthéon-Sorbonne University  -- Paris, FR, marc.shapiro@acm.org)}
 
-\license
-
-The programming continuum, from core to edge and back
+\textbf{The programming continuum, from core to edge and back --}
 Current cloud architectures, centralised in a few massive data centres, are increasingly moving towards support of edge resources, including localised data centres, points-of-presence, 5G tower micro-DCs, IoT gateways, and far-edge devices. Computing models offered across this spectrum differ vastly, from database-centric in the core, to stream- and notification based at the far edge. When a database system supports notifications, and vice-versa, these are tacked on as an afterthought and not well integrated. Data-sharing models themselves range from weakly to strongly consistent, with blockchains being a bit of both. Indeed, at this scale, CAP and the conflict between correctness and availability is inescapable. Security is often a second-class citizen in distributed system design, as is deployment, monitoring and run-time control. However, we argue that there is no good reason for this proliferation of incompatible models. Developers need access to the full power of distributed computing; they need a common programming model across the whole spectrum, forming a programming continuum. For instance, data access and notifications can be designed to be mutually consistent. Replication can be available-first (based on CRDTs) but designed to seamlessly support stronger synchronisation when required by application semantics. A large system being a composition of parts, composable verification techniques are a key to success. The designer should be able to create and reason about distributed abstractions. To enforce these abstractions, and for security reasons, requires arms-length isolation boundaries. This may use encryption and to branching/merging consistency models, inspired by distributed version control and blockchains. Deployment and monitoring can be programmed using the same abstractions as ordinary computations. The above can be implemented in many different (but mutually compatible) ways, for instance in the core vs. at the far edge.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\abstracttitle{Debugging of Actor Programs using Rebeca Model Checking Tool}
+\abstracttitle{Debugging of actor programs using rebeca model checking tool}
 \abstractauthor[Marjan Sirjani]{Marjan Sirjani (Malardalen University -- Vasteras, SE, marjan.sirjani@mdh.se)}
 
 \license
@@ -321,7 +317,7 @@ Rebeca is designed as an imperative actor-based language with the goal of provid
 Timed Rebeca is an extension of Rebeca in which network and computational delays, periodic events, and required deadlines can be expressed in the model. Model checking and simulation tools are built based on the formal semantics of the language. For deadlock-freedom and schedulability analysis special efficient techniques in state space exploration is proposed by exploiting the isolation of method execution in the model. I will briefly show how these models can be used in safety assurance and performance evaluation of different systems, like Network on Chip architectures, sensor network applications, and network protocols. Then I will show how Rebeca can be used for debugging and model-driven development of distributed event-based asynchronous systems.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\abstracttitle{Designing Distributed Systems with Piecewise Relative Observable Purity}
+\abstracttitle{Designing distributed systems with piecewise relative observable purity}
 \abstractauthor[Peter Van Roy]{Peter Van Roy (Catholic University of Louvain  -- Louvain-la-Neuve, BE,  pvr@info.ucl.ac.be)}
 
 \license
@@ -337,7 +333,7 @@ There exists a useful purely functional subset of distributed programming.  Pure
 To be completed...
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\abstracttitle{Invariant-Preserving Applications for Weakly Consistent Replicated Databases}
+\abstracttitle{Invariant-preserving applications for weakly consistent replicated databases}
 \abstractauthor[Carla Ferreira]{Carla Ferreira (Universidade Nova de Lisboa  --  Lisbon, PT, carla.ferreira@fct.unl.pt)}
 
 \license
@@ -352,7 +348,7 @@ Building trustworthy cloud applications is inherently complex and error-prone, a
 
 
 %%%%%%%%%%%%%%%%
-\abstracttitle{The Global Object Tracker (GoT)}
+\abstracttitle{The global object tracker (GoT)}
 \abstractauthor[Rohan Achar]{Rohan Achar (University of California --  Irvine, US)}
 
 \license
@@ -381,11 +377,11 @@ Object state synchronization between components of distributed applications cont
   \item Uwe Breitenb{\"u}cher\\Universit{\"a}t Stuttgart, DE
   \item Sebastian Burckhardt\\Microsoft Research -- \\Redmond, US
   \item Surajit Chaudhuri\\Microsoft Research -- \\Redmond, US
-  \item Natalia Chechina\\University of Bournemouth -- Poole, GB
-  \item Amit K. Chopra\\Lancaster University, GB
+  \item Natalia Chechina\\University of Bournemouth -- Poole, UK
+  \item Amit K. Chopra\\Lancaster University, UK
   \item Schahram Dustdar\\Technische Universit{\"a}t Wien, AT
   \item Patrick Thomas Eugster\\University of Lugano, CH
-  \item Carla Ferreira\\New University of Lisbon, PT
+  \item Carla Ferreira\\Universidade NOVA de Lisboa, PT
   \item Torsten Grust\\Universit{\"a}t T{\"u}bingen, DE
   \item Philipp Haller\\KTH Royal Institute of Technology -- Stockholm, SE
   \item Edward A. Lee\\University of California -- \\Berkeley, US
@@ -397,7 +393,7 @@ Object state synchronization between components of distributed applications cont
   \item Marc Shapiro\\Sorbonne University -- \\Paris, FR
   \item Marjan Sirjani\\M{\"a}lardalen University -- \\V{\"a}ster{\aa}s, SE
   \item Peter Van Roy\\UC Louvain, BE
-  \item Nobuko Yoshida\\Imperial College London, GB
+  \item Nobuko Yoshida\\Imperial College London, UK
   \item Damien Zufferey\\MPI-SWS -- \\Kaiserslautern, DE
   \end{itemize}
 \end{multicols}
