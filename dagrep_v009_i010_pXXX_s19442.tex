@@ -325,12 +325,35 @@ Timed Rebeca is an extension of Rebeca in which network and computational delays
 There exists a useful purely functional subset of distributed programming.  Purely functional distributed computations do not interact with the real world (because all inputs must be known in advance), but they support message asynchrony and reordering, and can be used to build networks of communicating agents.  General distributed programming consists of purely functional distributed programming plus interaction points for real-world interactions.  We are working on a design language, called PROP (Piecewise Relative Observable Purity) to specify distributed systems explicitly as a purely functional core plus interaction points.  We aim to turn this into a practical tool that can leverage the powerful techniques available to functional programming for distributed systems design.
 
 %%%%%%%%%%%%%%%%
-\abstracttitle{To be completed...}
+\abstracttitle{How can concurrent data structures inspire distributed data structures and how to implement efficient language prototypes ``for free''}
 \abstractauthor[Aleksandar Prokopec]{Aleksandar Prokopec (Oracle Labs  --  Zurich, CH, aleksandar.prokopec@gmail.com)}
 
 \license
 
-To be completed...
+Most balanced search trees use key comparisons to guide their
+operations, and achieve logarithmic running time. By relying on
+numerical properties of the keys, interpolation search achieves lower
+search complexity and better performance. Although interpolation-based
+data structures were investigated in the past, their non-blocking
+concurrent variants have received very little attention so far. In
+this talk, I describe the first non-blocking implementation of the
+classic interpolation search tree data structure. For arbitrary key
+distributions, the data structure ensures amortized O(log n) insertion
+and deletion. Furthermore, when input key distributions are smooth,
+lookups run in expected O(log log n) time, and insertion and deletion
+run in amortized O(log log n). I then hypothesize that the design of
+this data structure can influence the design of distributed search
+data structures, and achieve similar performance benefits.
+
+In the second part of the talk, I describe how we implemented
+GraalWasm -- an engine for the WebAssembly language by extending
+GraalVM. I start by describing the GraalVM stack, and the WebAssembly
+language, and I then describe the internals of GraalWasm. The talk is
+meant as an inspiration for people who want to use GraalVM for rapid
+prototyping of programming language implementations when high
+performance is required -- my hope is that this talk should be of a
+particular interest for people working on query languages for
+databases or distributed systems.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \abstracttitle{Invariant-preserving applications for weakly consistent replicated databases}
