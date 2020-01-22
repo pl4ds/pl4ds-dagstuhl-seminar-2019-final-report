@@ -185,6 +185,14 @@ This is joint work with Mathias Weber and Arnd Poetzsch-Heffter.
 The automation of application deployment is critical because deploying systems manually is too error-prone, time-consuming, and costly. Therefore, several deployment automation technologies have been developed in recent years. However, to deploy complex distributed systems, it is often necessary to combine several of these deployment technologies as their capabilities differ considerably. Unfortunately, such an integration is a complex technical issue as each technology has its own deployment metamodel and API. Our first step to tackle this issue was the introduction of the Essential Deployment Metamodel (EDMM), which is a normalized metamodel for deployment models that can be mapped to the 13 most important deployment technologies including, e. g., Terraform, CloudFormation, and TOSCA. However, the current EDMM Transformation Framework only supports transforming an EDMM model into one certain deployment technology, which restricts its applicability, as typically multiple deployment technologies need to be combined for deploying complex systems. Therefore, we are working on an extension that is capable of automatically splitting and transforming one EDMM model to several  deployment models supported by different deployment technologies. Moreover, the extension also generates an imperative workflow model that invokes the different deployment technologies involved with the corresponding deployment models. This enables to fully automate the deployment of complex distributed systems.
 
 %%%%%%%%%%%%%%%%
+\abstracttitle{Scaling distributed systems reliably}
+\abstractauthor[Natalia Chechina]{Natalia Chechina (Bournemouth University -- Poole, UK, nchechina@bournemouth.ac.uk)}
+
+\license
+
+Erlang is a well-known programming language in the areas of distributed databases and large-scale messaging applications, e.g., WhatsApp with 1.5Bn monthly users. However, when it comes to safety critical systems and robotics in particular, people who never worked with Erlang are sceptical regarding its usefulness and the applicability of its principles. In this talk I will share research and findings of applying Erlang's non-defensive programming approach and ``let it crash'' philosophy to enable fault tolerance and scalability of robots. I will also share findings regarding Communication Scaling Limit Volume (CSLV) which states that in a team of robots the volume of data remains constant and is in direct proportion with the number of nodes, size and number of messages.
+
+%%%%%%%%%%%%%%%%
 \abstracttitle{Cloud + Big Data: Implications for structured data platforms}
 \abstractauthor[Surajit Chaudhuri]{Surajit Chaudhuri (Microsoft Research Lab -- Redmond, US, surajitc@microsoft.com)}
 
